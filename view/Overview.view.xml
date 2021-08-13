@@ -1,0 +1,21 @@
+<mvc:View
+		controllerName="invent.clientes.controller.Overview"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+		
+	<Page title="INVENT SOFTWARE">
+	
+		<headerContent>
+		</headerContent>
+		<content>
+			
+			<Button
+					icon="sap-icon://hello-world"
+					text="Listar Cliente"
+					press="navegarParaLista"/>
+					
+		</content>
+		
+		
+	</Page>
+</mvc:View>
