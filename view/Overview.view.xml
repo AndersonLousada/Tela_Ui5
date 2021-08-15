@@ -10,6 +10,7 @@
 			<GenericTile 
 			    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
 			    header="Listar Clientes"
+				subheader="Contatos cadastrados"
 			    press="navegarParaLista">
 				<TileContent unit="Goiânia" footer="16/08/2021">
 					<NumericContent  value="5" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
@@ -19,10 +20,10 @@
 			<GenericTile 
 				class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
 				header="Cadastrar Clientes"
-				subheader="Pressione para cadastrar novo contato"
+				subheader="Novo contato"
 				press="inserirCadastroNovo">
 				<TileContent unit="Goiânia" footer="16/08/2021">
-					<NumericContent  value="5" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
+					<NumericContent  value="" valueColor="Good" withMargin="True" icon="sap-icon://add-contact" />
 				</TileContent>
 			</GenericTile>
 
