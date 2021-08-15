@@ -1,21 +1,31 @@
 <mvc:View
-		controllerName="invent.clientes.controller.Overview"
-		xmlns="sap.m"
-		xmlns:mvc="sap.ui.core.mvc">
-		
+	controllerName="invent.clientes.controller.Overview"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout">
+
 	<Page title="INVENT SOFTWARE">
-	
-		<headerContent>
-		</headerContent>
 		<content>
+
+			<GenericTile 
+			    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+			    header="Listar Clientes"
+			    press="navegarParaLista">
+				<TileContent unit="Goiânia" footer="16/08/2021">
+					<NumericContent  value="5" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
+				</TileContent>
+			</GenericTile>	
 			
-			<Button
-					icon="sap-icon://hello-world"
-					text="Listar Cliente"
-					press="navegarParaLista"/>
-					
+			<GenericTile 
+				class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+				header="Cadastrar Clientes"
+				subheader="Pressione para cadastrar novo contato"
+				press="inserirCadastroNovo">
+				<TileContent unit="Goiânia" footer="16/08/2021">
+					<NumericContent  value="5" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
+				</TileContent>
+			</GenericTile>
+
 		</content>
-		
-		
 	</Page>
 </mvc:View>

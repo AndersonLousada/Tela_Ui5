@@ -1,17 +1,19 @@
 <mvc:View
+
 	controllerName="invent.clientes.controller.Inserir"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"	>
-	<Page showNavButton="true" navButtonPress=".onNavBack" title="Voltar">
+
+	<Page showNavButton="true" navButtonPress=".onNavBack" title="Inserir Novo Cadastro">
 
 
 	<l:VerticalLayout class="sapUiContentPadding" width="100%">
-		<Label text="Name" labelFor="nameInput" />
+		<Label text="Nome" labelFor="nameInput" />
 		<Input
 			id="nameInput"
 			class="sapUiSmallMarginBottom"
-			placeholder="Enter name"
+			placeholder="Digite o nome"
 			valueStateText="Name must not be empty. Maximum 10 characters."
 			value="{
 				path : '/name',
@@ -23,20 +25,71 @@
 			}"
 			change= ".onNameChange" />
 
+		
+		<Label text="Telefone" labelFor="telefoneInput" />
+		<Input
+			id="telefoneInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Digite o telefone"
+			valueStateText="Name must not be empty. Maximum 10 characters."
+			value="{
+				path : '/telefone',
+				type : 'sap.ui.model.type.String',
+				constraints : {
+					minLength: 1,
+					maxLength: 10
+				}
+			}"
+			change= ".onNameChange" />
+
 		<Label text="E-mail" labelFor="emailInput" />
+
 		<Input
 			id="emailInput"
 			class="sapUiSmallMarginBottom"
 			type="Email"
-			placeholder="Enter email"
+			placeholder="Digite o email"
 			valueStateText="E-mail must be a valid email address."
 			value="{
 				path: '/email',
 				type: '.customEMailType'
 			}" />
+
+		<Label text="Endereço" labelFor="enderecoInput" />
+		<Input
+			id="enderecoInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Digite o endereço"
+			valueStateText="Name must not be empty. Maximum 10 characters."
+			value="{
+				path : '/endereco',
+				type : 'sap.ui.model.type.String',
+				constraints : {
+					minLength: 1,
+					maxLength: 10
+				}
+			}"
+			change= ".onNameChange" />
+
+		<Label text="CPF/CNPJ" labelFor="cpfInput" />
+		<Input
+			id="cpfInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Digite o CPF/CNPJ"
+			valueStateText="Name must not be empty. Maximum 10 characters."
+			value="{
+				path : '/cpf',
+				type : 'sap.ui.model.type.String',
+				constraints : {
+					minLength: 1,
+					maxLength: 10
+				}
+			}"
+			change= ".onNameChange" />
 		<Button text="Submit" press=".onSubmit" />
 		
 	</l:VerticalLayout>
+	
 	</Page>
 
 </mvc:View>

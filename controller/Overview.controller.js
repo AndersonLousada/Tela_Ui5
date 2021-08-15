@@ -1,6 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+
+], function (Controller, JSONModel) {
 	"use strict";
 
 	return Controller.extend("invent.clientes.controller.Overview", {
@@ -8,7 +9,14 @@ sap.ui.define([
 		navegarParaLista : function (){
 			var oRouter = this.getOwnerComponent().getRouter();
 				 oRouter.navTo("listaName");
+				
+		},
+		inserirCadastroNovo: function() {
+
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("cadastroDeCliente");
 		}
 
 	});
+	
 });

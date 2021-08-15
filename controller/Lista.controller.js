@@ -1,7 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History"
-], function (Controller, History) {
+	"sap/ui/core/routing/History",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function (Controller, History, Filter, FilterOperator) {
 	"use strict";
 
 	return Controller.extend("invent.clientes.controller.Lista", {
@@ -12,7 +14,6 @@ sap.ui.define([
 
 		inserirCadastroNovo: function() {
 
-			console.log()
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("cadastroDeCliente");
 		},
@@ -37,7 +38,25 @@ sap.ui.define([
 				var oRouter = this.getOwnerComponent().getRouter();
 				oRouter.navTo("overview", {}, true);
 			}
-		}
+		},
+
+		filtroDeContatos : function (oEvent) {
+			// build filter array 
+			let aFilter = [];
+			let sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				aFilter.push(new Filter("Nome", FilterOperator.Contains, sQuery));
+			}
+			// filter binding
+			let oList = this.byId("listaDeContatos");
+			let oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
+		},
+		onSearch : function(oEvent)
+        {
+            let filterTable = new Filter("Nome", sap.ui.model.FilterOperator.Contains, oEvent.getSource().getValue());
+            oEvent.getSource().getParent().getParent().getBinding("items").filter(filterTable);
+        },
 		
 
 	});
