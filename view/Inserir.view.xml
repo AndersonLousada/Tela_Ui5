@@ -3,6 +3,8 @@
 	controllerName="invent.clientes.controller.Inserir"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc"	>
 
 	<Page showNavButton="true" navButtonPress=".onNavBack" title="Inserir Novo Cadastro">
@@ -11,98 +13,172 @@
 			<Toolbar>
 				<Button type="Back" press=".onNavBack" />
 				<ToolbarSpacer/>
-				<Title text="Lista de Clientes" level="H1"/>
+				<Title text="Incluir novos Contatos" level="H1"/>
+				
 				<ToolbarSpacer/>
-                <Button
-                        icon="sap-icon://home"
-                        text="Ir para início"
-                        press="voltarParaInicio"/>
+					<Button	icon="sap-icon://home" text="Voltar para início" press="voltarParaInicio"/>
 			</Toolbar>
 		</customHeader>
 
+		<VBox class="sapUiSmallMargin">
+		<f:Form id="FormChange480_12120"
+			editable="true">
+			<f:title>
+				<core:Title text="Contato novo" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="12"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
 
-	<l:VerticalLayout class="sapUiContentPadding" width="100%">
-		<Label text="Nome" labelFor="nameInput" />
-		<Input
-			id="nameInput"
-			class="sapUiSmallMarginBottom"
-			placeholder="Digite o nome"
-			valueStateText="Name must not be empty. Maximum 10 characters."
-			value="{
-				path : '/name',
-				type : 'sap.ui.model.type.String',
-				constraints : {
-					minLength: 1,
-					maxLength: 10
-				}
-			}"
-			change= ".onNameChange" />
+			<f:FormContainer title="Informaçõs pessoais">
+					<f:FormElement label="Nome">
+						<f:fields>
+							<Input value="{SupplierNome}" id="nome" placeholder="Insira Nome"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="CPF">
+						<f:fields>
+							<Input value="{SupplierCPF}" id="CPF" placeholder="Insira CPF"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="CNH">
+						<f:fields>
+							<Input value="{SupplierCNH}" id="CNH" placeholder="Insira Nº CNH"/>
+						</f:fields>
+					</f:FormElement>
 
-		
-		<Label text="Telefone" labelFor="telefoneInput" />
-		<Input
-			id="telefoneInput"
-			class="sapUiSmallMarginBottom"
-			placeholder="Digite o telefone"
-			valueStateText="Name must not be empty. Maximum 10 characters."
-			value="{
-				path : '/telefone',
-				type : 'sap.ui.model.type.String',
-				constraints : {
-					minLength: 1,
-					maxLength: 10
-				}
-			}"
-			change= ".onNameChange" />
+					<f:FormElement label="Categoria">
+							<f:fields>
+								<Select id="Categoria" selectedKey="{Categoria}" >
+									<items>
+										<core:Item text="A" key="A"/>
+										<core:Item text="B" key="B"/>
+										<core:Item text="C" key="C"/>
+										<core:Item text="D" key="D"/>
+										<core:Item text="E" key="E"/>
+									</items>
+								</Select>
+								
+							</f:fields>
+						</f:FormElement>
+					
+			</f:FormContainer>
+			<f:formContainers>
+				<f:FormContainer title="Endereço">
+					<f:formElements>
+						<f:FormElement label="Logradouro/Número">
+							<f:fields>
+								<Input value="{Logradouro}" placeholder="Insira Logradouro" />
+								<Input value="{HouseNumber}" placeholder="Número">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="UF/CEP/Cidade">
+							<f:fields>
+								<Select id="UF" selectedKey="{UF}">
+									<items>
+										<core:Item text="GO" key="GO"/>
+										<core:Item text="SP" key="SP"/>
+										<core:Item text="RJ" key="RJ"/>
+									</items>
+								</Select>
+								<Input value="{CEP}" placeholder="Insira CEP">
+									<layoutData>	
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Input value="{Cidade}" placeholder="Insira Cidade" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Nacionalidade">
+							<f:fields>
+								<Select id="Nacionalidade" selectedKey="{Nacionalidade}">
+									<items>
+										<core:Item text="Brasil" key="Brasil"/>
+										<core:Item text="Alemanha" key="Alemanha"/>
+										<core:Item text="Estados Unidos" key="Estados Unidos"/>
+										<core:Item text="Japão" key="Japão"/>
+										<core:Item text="China" key="China"/>
+										<core:Item text="México" key="México"/>
+										<core:Item text="Argentina" key="Argentina"/>
+										<core:Item text="Canadá" key="Canadá"/>
+										<core:Item text="Russia" key="Russia"/>
+									</items>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
 
-		<Label text="E-mail" labelFor="emailInput" />
+				</f:FormContainer>
+			
 
-		<Input
-			id="emailInput"
-			class="sapUiSmallMarginBottom"
-			type="Email"
-			placeholder="Digite o email"
-			valueStateText="E-mail must be a valid email address."
-			value="{
-				path: '/email',
-				type: '.customEMailType'
-			}" />
+				
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="FormChange480_12120-2"
+			editable="true">
+			<f:title>
+				<core:Title text=" " />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="12"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="Contatos">
+					<f:formElements>
+						<f:FormElement label="Tel./whatsapp">
+							<f:fields>
+								<Input value="{Tel/whatsapp}" placeholder="Insira Nº Telefone" />
+							</f:fields>
+						</f:FormElement>
 
-		<Label text="Endereço" labelFor="enderecoInput" />
-		<Input
-			id="enderecoInput"
-			class="sapUiSmallMarginBottom"
-			placeholder="Digite o endereço"
-			valueStateText="Name must not be empty. Maximum 10 characters."
-			value="{
-				path : '/endereco',
-				type : 'sap.ui.model.type.String',
-				constraints : {
-					minLength: 1,
-					maxLength: 10
-				}
-			}"
-			change= ".onNameChange" />
+						<f:FormElement label="Fixo">
+							<f:fields>
+								<Input value="{Fixo}" placeholder="Insira Nº Telefone fixo" />
+							</f:fields>
+						</f:FormElement>
 
-		<Label text="CPF/CNPJ" labelFor="cpfInput" />
-		<Input
-			id="cpfInput"
-			class="sapUiSmallMarginBottom"
-			placeholder="Digite o CPF/CNPJ"
-			valueStateText="Name must not be empty. Maximum 10 characters."
-			value="{
-				path : '/cpf',
-				type : 'sap.ui.model.type.String',
-				constraints : {
-					minLength: 1,
-					maxLength: 10
-				}
-			}"
-			change= ".onNameChange" />
-		<Button text="Submit" press=".onSubmit" />
-		
-	</l:VerticalLayout>
-	
+						<f:FormElement label="Email">
+							<f:fields>
+								<Input value="{EMail}" placeholder="Insira email" />
+							</f:fields>
+						</f:FormElement>
+						
+						
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<ToolbarSpacer/><Button text="Salvar" press=".onSubmit" icon="sap-icon://accept" />
+	</VBox>
 	</Page>
-
 </mvc:View>

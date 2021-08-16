@@ -24,7 +24,8 @@ sap.ui.define([
 
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("voltarParaInicio");
-		}
+		},
+
 		
 
 		
