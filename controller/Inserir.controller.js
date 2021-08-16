@@ -19,6 +19,11 @@ sap.ui.define([
 				var oRouter = this.getOwnerComponent().getRouter();
 				oRouter.navTo("overview", {}, true);
 			}
+		},
+		voltarParaInicio: function() {
+
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("voltarParaInicio");
 		}
 		
 

@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 
-], function (Controller, JSONModel) {
+], function (Controller) {
 	"use strict";
 
 	return Controller.extend("invent.clientes.controller.Overview", {

@@ -7,6 +7,19 @@
 
 	<Page showNavButton="true" navButtonPress=".onNavBack" title="Inserir Novo Cadastro">
 
+		<customHeader>
+			<Toolbar>
+				<Button type="Back" press=".onNavBack" />
+				<ToolbarSpacer/>
+				<Title text="Lista de Clientes" level="H1"/>
+				<ToolbarSpacer/>
+                <Button
+                        icon="sap-icon://home"
+                        text="Ir para início"
+                        press="voltarParaInicio"/>
+			</Toolbar>
+		</customHeader>
+
 
 	<l:VerticalLayout class="sapUiContentPadding" width="100%">
 		<Label text="Nome" labelFor="nameInput" />

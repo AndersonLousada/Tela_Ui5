@@ -3,7 +3,6 @@
   "sap.app": {
     "id": "invent.clientes",
     "type": "application",
-    "i18n": "i18n/i18n.properties",
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "applicationVersion": {
@@ -78,6 +77,11 @@
           "pattern": "cadastroDeCliente",
           "name": "cadastroDeCliente",
           "target": "cadastroDeCliente" 
+        },
+        {
+          "pattern": "voltarParaInicio",
+          "name": "voltarParaInicio",
+          "target": "voltarParaInicio" 
         }
 
       ],
@@ -97,6 +101,10 @@
         "cadastroDeCliente": {
           "viewId": "cadastroDeCliente",
           "viewName": "Inserir"
+        },
+        "voltarParaInicio": {
+          "viewId": "voltarParaInicio",
+          "viewName": "Overview"
         }
 
       }
