@@ -4,6 +4,7 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
+	height="100%"
 	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc"	>
 
@@ -86,6 +87,7 @@
 			<f:formContainers>
 				<f:FormContainer title="Endereço">
 					<f:formElements>
+						
 						<f:FormElement label="Logradouro/Número">
 							<f:fields>
 								<Input value="{Logradouro}" placeholder="Insira Logradouro" />
@@ -96,8 +98,26 @@
 								</Input>
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="UF/CEP/Cidade">
+						<f:FormElement label="Complemento">
 							<f:fields>
+								<Input value="{Complemento}" placeholder="Complemento">
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Cidade">
+							<f:fields>
+								<Input value="{Cidade}" placeholder="Cidade">
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						
+						<f:FormElement label="CEP/UF">
+							<f:fields>
+							<Input value="{CEP}" placeholder="Insira CEP">
+									<layoutData>	
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
 								<Select id="UF" selectedKey="{UF}">
 									<items>
 										<core:Item text="GO" key="GO"/>
@@ -105,12 +125,7 @@
 										<core:Item text="RJ" key="RJ"/>
 									</items>
 								</Select>
-								<Input value="{CEP}" placeholder="Insira CEP">
-									<layoutData>	
-										<l:GridData span="XL2 L2 M2 S4" />
-									</layoutData>
-								</Input>
-								<Input value="{Cidade}" placeholder="Insira Cidade" />
+								
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Nacionalidade">
@@ -164,13 +179,21 @@
 					<f:formElements>
 						<f:FormElement label="Tel./whatsapp">
 							<f:fields>
-								<Input value="{Tel/whatsapp}" placeholder="Insira Nº Telefone" />
+								<MaskInput mask="(CC)-CCCCC-CCCC" placeholderSymbol="-" placeholder="(XX)-XXXXX-XXXX">
+							<rules>
+								<MaskInputRule maskFormatSymbol="C" regex="[A-Z0-9]"/>
+							</rules>
+						</MaskInput>
 							</f:fields>
 						</f:FormElement>
 
 						<f:FormElement label="Fixo">
 							<f:fields>
-								<Input value="{Fixo}" placeholder="Insira Nº Telefone fixo" />
+								<MaskInput mask="(CC)-CCCC-CCCC" placeholderSymbol="-" placeholder="(XX)-XXXX-XXXX">
+							<rules>
+								<MaskInputRule maskFormatSymbol="C" regex="[A-Z0-9]"/>
+							</rules>
+						</MaskInput>
 							</f:fields>
 						</f:FormElement>
 
@@ -179,6 +202,9 @@
 								<Input value="{EMail}" placeholder="Insira email" />
 							</f:fields>
 						</f:FormElement>
+
+						
+
 						
 						
 					</f:formElements>
