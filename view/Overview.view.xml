@@ -23,8 +23,8 @@
 				header="Cadastrar Clientes"
 				subheader="Novo contato"
 				press="inserirCadastroNovo">
-				<TileContent unit="Goiânia" footer="16/08/2021">
-					<NumericContent  value="" valueColor="Good" withMargin="True" icon="sap-icon://add-contact" />
+				<TileContent unit="Goiânia" >
+					<NumericContent  valueColor="Good" withMargin="True" icon="sap-icon://add-contact" />
 				</TileContent>
 			</GenericTile>
 
@@ -34,6 +34,9 @@
 		subheader="Rua T-61, nº 270, Setor Bueno, Goiânia-GO – (62) 3637-1774" 
 		class="sapUiSmallMargin" press="press">
 	</FeedContent>
+
+
+
 
 
 	
