@@ -16,7 +16,7 @@
 				subheader="Contatos cadastrados"
 			    press="navegarParaLista">
 				<TileContent unit="Goiânia" footer="16/08/2021">
-					<NumericContent  value="5" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
+					<NumericContent  value="{tiles>/qtd}" valueColor="Good" withMargin="false" icon="sap-icon://activities" />
 				</TileContent>
 			</GenericTile>	
 			

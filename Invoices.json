@@ -69,6 +69,20 @@
         "Bairro": "Setor Bueno",
         "Uf": "GO"
        
+      },
+      {
+        "Nome": "Edvan Carvalho",
+        "Codigo": 5,
+        "CPF": "658.785.478.01",
+        "Email": "edvan.carvalho@inventsoftware.com.br",
+        "Telefone": "(62) 98445.1245",
+        "Municipio": "Goiânia",
+        "Rua": "T-61",
+        "Cep": "74223-170",
+        "Numero": "Nº 270",
+        "Bairro": "Setor Bueno",
+        "Uf": "GO"
+       
       }
 
 
