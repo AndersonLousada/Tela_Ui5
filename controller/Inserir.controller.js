@@ -28,7 +28,7 @@ sap.ui.define([
 			oRouter.navTo("voltarParaInicio");
 		},
 		onConfirmationMessageBoxPress: function () {
-			MessageBox.confirm("Sempre confirme as informações.");
+			MessageBox.confirm("Confirme sempre as informações antes de salvar.");
 		}
 
 		

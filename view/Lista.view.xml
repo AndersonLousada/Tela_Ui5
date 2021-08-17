@@ -56,9 +56,6 @@
                 </ColumnListItem>
             </items>
     </Table>
-
-    
-
     </Page>
 
 </mvc:View>
