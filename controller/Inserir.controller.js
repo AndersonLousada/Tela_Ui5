@@ -72,9 +72,12 @@ sap.ui.define([
 		},
 
 
-		onConfirmationMessageBoxPress: function () {
+		obterDadosInformados: function () {
 
-		},
+			let cliente = this.getClienteModel();
+			console.table(cliente)
+
+		}
 
 		
 

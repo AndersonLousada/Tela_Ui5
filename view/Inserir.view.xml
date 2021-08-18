@@ -9,6 +9,7 @@
 
 	<Page showNavButton="true" navButtonPress=".onNavBack" title="Inserir Novo Cadastro">
 		<customHeader>
+
 			<Toolbar>
 				<Button type="Back" press=".onNavBack" />
 				<ToolbarSpacer/>
@@ -16,13 +17,17 @@
 				<ToolbarSpacer/>
 					<Button	icon="sap-icon://home" text="Voltar para início" press="voltarParaInicio"/>
 			</Toolbar>
+
 		</customHeader>
+
 		<VBox class="sapUiSmallMargin">
+
 		<f:Form id="FormChange480_12120" editable="true">
 			<f:title>
 				<core:Title text="Dados do cliente" />
 			</f:title>
 			<f:layout>
+
 				<f:ResponsiveGridLayout
 					labelSpanXL="4"
 					labelSpanL="4"
@@ -36,7 +41,9 @@
 					columnsXL="2"
 					columnsL="2"
 					columnsM="1"
-					singleContainerFullSize="false" />
+					singleContainerFullSize="false"
+				/>
+
 			</f:layout>
 			<f:FormContainer title="Informaçõs pessoais">
 					<f:FormElement label="Nome">
@@ -46,7 +53,7 @@
 					</f:FormElement>
 					<f:FormElement label="CPF">
 						<f:fields>
-							<Input value="{SupplierCPF}" id="CPF" placeholder="Insira CPF"/>
+							<Input value="{cliente>/CPF}" id="CPF" placeholder="Insira CPF"/>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="Data de Nascimento">
@@ -59,12 +66,12 @@
 					</f:FormElement>
 					<f:FormElement label="CNH">
 						<f:fields>
-							<Input value="{SupplierCNH}" id="CNH" placeholder="Insira Nº CNH"/>
+							<Input value="{cliente>/CNH}" id="CNH" placeholder="Insira Nº CNH"/>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="Categoria">
 							<f:fields>
-								<Select id="Categoria" selectedKey="{Categoria}" >
+								<Select selectedKey="{cliente>/Categoria}" id="Categoria"  >
 									<items>
 										<core:Item text="A" key="A"/>
 										<core:Item text="B" key="B"/>
@@ -77,7 +84,7 @@
 						</f:FormElement>
 						<f:FormElement label="Naturalidade">
 							<f:fields>
-								<Select id="Naturalidade" selectedKey="{Naturalidade}">
+								<Select selectedKey="{cliente>/Naturalidade}" id="Naturalidade">
 									<items>
 										<core:Item text="Brasil" key="Brasil"/>
 										<core:Item text="Alemanha" key="Alemanha"/>
@@ -209,7 +216,17 @@
 			ariaHasPopup="Dialog"
 			icon="sap-icon://accept" 
 		/>
-		
+		<Button
+			text="Teste"
+			class="sapUiSmallMarginBottom"
+			press=".obterDadosInformados"
+			type="Active"
+			width="280px"
+			ariaHasPopup="Dialog"
+			icon="sap-icon://accept" 
+		/>
+
+
 	</VBox>
 	</Page>
 </mvc:View>
