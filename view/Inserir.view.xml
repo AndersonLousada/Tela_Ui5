@@ -1,5 +1,4 @@
 <mvc:View
-
 	controllerName="invent.clientes.controller.Inserir"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
@@ -9,21 +8,17 @@
 	xmlns:mvc="sap.ui.core.mvc"	>
 
 	<Page showNavButton="true" navButtonPress=".onNavBack" title="Inserir Novo Cadastro">
-
 		<customHeader>
 			<Toolbar>
 				<Button type="Back" press=".onNavBack" />
 				<ToolbarSpacer/>
 				<Title text="Novo Cliente" level="H1"/>
-				
 				<ToolbarSpacer/>
 					<Button	icon="sap-icon://home" text="Voltar para início" press="voltarParaInicio"/>
 			</Toolbar>
 		</customHeader>
-
 		<VBox class="sapUiSmallMargin">
-		<f:Form id="FormChange480_12120"
-			editable="true">
+		<f:Form id="FormChange480_12120" editable="true">
 			<f:title>
 				<core:Title text="Dados do cliente" />
 			</f:title>
@@ -43,11 +38,10 @@
 					columnsM="1"
 					singleContainerFullSize="false" />
 			</f:layout>
-
 			<f:FormContainer title="Informaçõs pessoais">
 					<f:FormElement label="Nome">
 						<f:fields>
-							<Input value="{SupplierNome}" id="nome" placeholder="Insira Nome"/>
+							<Input value="{cliente>/nome}" id="nome" placeholder="Insira Nome"/>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="CPF">
@@ -79,58 +73,11 @@
 										<core:Item text="E" key="E"/>
 									</items>
 								</Select>
-								
 							</f:fields>
 						</f:FormElement>
-					
-			</f:FormContainer>
-			<f:formContainers>
-				<f:FormContainer title="Endereço">
-					<f:formElements>
-						
-						<f:FormElement label="Logradouro/Número">
+						<f:FormElement label="Naturalidade">
 							<f:fields>
-								<Input value="{Logradouro}" placeholder="Insira Logradouro" />
-								<Input value="{HouseNumber}" placeholder="Número">
-									<layoutData>
-										<l:GridData span="XL2 L2 M2 S4" />
-									</layoutData>
-								</Input>
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Complemento">
-							<f:fields>
-								<Input value="{Complemento}" placeholder="Complemento">
-								</Input>
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Cidade">
-							<f:fields>
-								<Input value="{Cidade}" placeholder="Cidade">
-								</Input>
-							</f:fields>
-						</f:FormElement>
-						
-						<f:FormElement label="CEP/UF">
-							<f:fields>
-							<Input value="{CEP}" placeholder="Insira CEP">
-									<layoutData>	
-										<l:GridData span="XL2 L2 M2 S4" />
-									</layoutData>
-								</Input>
-								<Select id="UF" selectedKey="{UF}">
-									<items>
-										<core:Item text="GO" key="GO"/>
-										<core:Item text="SP" key="SP"/>
-										<core:Item text="RJ" key="RJ"/>
-									</items>
-								</Select>
-								
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Nacionalidade">
-							<f:fields>
-								<Select id="Nacionalidade" selectedKey="{Nacionalidade}">
+								<Select id="Naturalidade" selectedKey="{Naturalidade}">
 									<items>
 										<core:Item text="Brasil" key="Brasil"/>
 										<core:Item text="Alemanha" key="Alemanha"/>
@@ -145,12 +92,56 @@
 								</Select>
 							</f:fields>
 						</f:FormElement>
+			</f:FormContainer>
+			<f:formContainers>
+				<f:FormContainer title="Endereço">
+					<f:formElements>
+						<f:FormElement label="CEP/Logradouro">
+							<f:fields>
+
+								<SearchField 
+								search=".buscarEndereco" 
+								value="{cliente>/Cep}" 
+								placeholder="Insira CEP" id="Cep" >
+								</SearchField>
+								<Input value="{cliente>/Rua}" placeholder="Insira Logradouro" id="Rua" />
+							</f:fields>
+						</f:FormElement>
+
+						<f:FormElement label="Número/Bairro">
+							<f:fields>
+							<Input value="{cliente>/Numero}" placeholder="Número" id="Numero">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S4" />
+								</layoutData>
+							</Input>
+								<Input value="{cliente>/Bairro}" placeholder="Bairro" id="Bairro">
+								</Input>
+							</f:fields>
+						</f:FormElement>
+
+						<f:FormElement label="Complemento">
+							<f:fields>
+								<Input value="{cliente>/Complemento}" placeholder="Complemento">
+								</Input>
+							</f:fields>
+						</f:FormElement>
+
+						<f:FormElement label="Cidade/Estado">
+
+							<f:fields>
+								<Input value="{cliente>/Cidade}" placeholder="Cidade" id="Cidade">
+								</Input>
+							</f:fields>
+
+							<f:fields>
+							<Input value="{cliente>/Estado}" placeholder="Estado" id="Estado">
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						
 					</f:formElements>
-
 				</f:FormContainer>
-			
-
-				
 			</f:formContainers>
 		</f:Form>
 		<f:Form id="FormChange480_12120-2"
@@ -202,23 +193,23 @@
 								<Input value="{EMail}" placeholder="Insira email" />
 							</f:fields>
 						</f:FormElement>
-
-						
-
-						
 						
 					</f:formElements>
 				</f:FormContainer>
 			</f:formContainers>
 		</f:Form>
 		<ToolbarSpacer/>
+
 		<Button
 			text="Salvar"
 			class="sapUiSmallMarginBottom"
-			press=".onConfirmationMessageBoxPress"
+			press=".onItemSelected"
+			type="Active"
 			width="280px"
 			ariaHasPopup="Dialog"
-			icon="sap-icon://accept" />
+			icon="sap-icon://accept" 
+		/>
+		
 	</VBox>
 	</Page>
 </mvc:View>

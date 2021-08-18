@@ -11,23 +11,40 @@
                         <Text text="{invoice>Nome}" />
                         <Label text="CPF" />
                         <Text text="{invoice>CPF}" />
+                        <Label text="Data de Nascimento" />
+                        <Text text="{invoice>DataDeNascimento}" />
+                        <Label text="Nº CNH" />
+                        <Text text="{invoice>NumeroCNH}" />
+                        <Label text="Cat. da CNH" />
+                        <Text text="{invoice>CategoriadaCNH}" />
+                        <Label text="Naturalidade" />
+                        <Text text="{invoice>Naturalidade}" />
 						
                         
 
 
                         <c:Title text="Endereço" />
-                        <Label text="Município:" />
-                        <Text text="{invoice>Municipio}" />
                         <Label text="Rua:" />
                         <Text text="{invoice>Rua}" />
-                        <Label text="CEP" />
-                        <Text text="{invoice>Cep}" />
+
                         <Label text="Numero:" />
                         <Text text="{invoice>Numero}" />
-                            <Label text="Bairro:" />
-                    <Text text="{invoice>Bairro}" />
+
+                        <Label text="Complemento:" />
+                        <Text text="{invoice>Complemento}" />
+
+                        <Label text="Bairro:" />
+                        <Text text="{invoice>Bairro}" />
+
+                        <Label text="CEP" />
+                        <Text text="{invoice>Cep}" />
+
+                        <Label text="Município:" />
+                        <Text text="{invoice>Municipio}" />
+                            
                         <Label text="UF:" />
-                    <Text text="{invoice>Uf}" />
+                        <Text text="{invoice>Uf}" />
+
                     </f:content>
                     <f:content>
                         <c:Title text="Contato:" />
@@ -35,6 +52,8 @@
                     <Text text="{invoice>Email}" />
                         <Label text="Telefone:" />
                     <Text text="{invoice>Telefone}" />
+                    <Label text="Telefone Fixo:" />
+                    <Text text="{invoice>Telefone_Fixo}" />
 
 
                         
